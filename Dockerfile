@@ -14,4 +14,5 @@ RUN strip -s $GOPATH/bin/$(basename $PROJECT)
 
 FROM alpine
 
+RUN apk add --no-cache ca-certificates
 COPY --from=builder /go/bin/rclone /usr/local/bin/
